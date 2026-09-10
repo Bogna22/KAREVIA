@@ -1,0 +1,9 @@
+<?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
+
+class Medecin extends Model {
+    protected $fillable = ['user_id','specialite','numero_ordre','presentation','tarif_solidaire','disponibilites','statut_validation','consultations_benevoles','teleconsultation_active'];
+    protected $casts    = ['disponibilites'=>'array','teleconsultation_active'=>'boolean'];
+    public function user() { return $this->belongsTo(User::class); }
+}
